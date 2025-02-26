@@ -36,8 +36,9 @@ export default function PostDetail() {
                 <Link to={`/posts/${parseInt(id) - 1}`}>Prev</Link>
                 <Link to={`/posts/${parseInt(id) + 1}`}>Next</Link>
             </nav>
-            <h2>Ciao sono la pagina di dettaglio dei post {post.name}</h2>
-            <img src={post.image} alt={post.name} />
+            <h2>{post.title}</h2>
+            <img src={post.image} alt={post.title} />
+            <p>{post.content}</p>
 
         </>
     )
