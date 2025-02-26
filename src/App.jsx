@@ -8,6 +8,10 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import HomePage from "./pages/HomePage"
 import ChiSiamo from "./pages/ChiSiamo"
 import PostListPage from "./pages/PostListPage"
+import PostDetailPage from "./pages/PostDetailPage"
+import PostCreatePage from "./pages/PostCreatePage"
+
+
 
 
 
@@ -22,7 +26,12 @@ function App() {
           {/* Definizione delle rotte */}
           <Route path="/" element={<HomePage />} />
           <Route path="/chisiamo" element={<ChiSiamo />} />
-          <Route path="/posts" element={<PostListPage />} />
+          <Route path="/posts">
+            <Route index element={<PostListPage />} />
+            <Route path="create" element={<PostCreatePage />} />
+            <Route path=":id" element={<PostDetailPage />} />
+          </Route>
+
         </Route>
 
 
